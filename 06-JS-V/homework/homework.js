@@ -16,10 +16,11 @@ function crearUsuario() {
     this.password = opciones.password;
   }
 
-  Usuario.prototype.saludar = function(){
-    return 'Hola, mi nombre es ' + this.nombre;
-  }
-  return Usuario;
+  Usuario.prototype.saludar = function() {
+  return 'Hola, mi nombre es ' + this.nombre
+}
+
+return Usuario
 }
 
 function agregarMetodoPrototype(Constructor) {
@@ -39,16 +40,17 @@ function agregarStringInvertida() {
   // 'toni'.reverse() => 'inot'
   // Pista: Necesitarás usar "this" dentro de "reverse"
 
-  String.prototype.reverse = function(){
+  String.prototype.reverse = function() {
 
     var stringinvertida = '';
 
     for(var i = this.length - 1; i >= 0; i--) {
-      stringinvertida = stringinvertida + this.charAt(i);
+      stringinvertida = stringinvertida + this[i];
     }
     return stringinvertida;
   }
 }
+// return this.split('').reverse().join('');
 
 
 // ---------------------------------------------------------------------------//
@@ -84,8 +86,8 @@ function crearInstanciaPersona(nombre, apellido, edad, dir) {
   //Con esta función vamos a crear una nueva persona a partir de nuestro constructor de persona (creado en el ejercicio anterior)
   //Recibirá los valores "Juan", "Perez", 22, "Saavedra 123" para sus respectivas propiedades
   //Devolver la nueva persona creada
-  var juan = new Persona('Juan', 'Perez', 22, 'Saavedra 123');
-  return juan;
+
+  return new Persona(nombre, apellido, edad, dir);
 }
   
 function agregarMetodo() {

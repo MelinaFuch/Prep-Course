@@ -66,7 +66,7 @@ function tieneEmail (usuario) {
   // Devuelve "true" si el usuario tiene un valor definido para la propiedad "email"
   // De lo contratio, devuelve "false"
   // Tu código:
-  if(usuario["email"]) {
+  if(usuario['email']) {
     return true
   }
   return false
@@ -88,7 +88,7 @@ function verificarPassword (usuario, password) {
   // Devuelve "true" si coinciden
   // De lo contrario, devuelve "false"
   // Tu código:
-  if(usuario["password"] === password) {
+  if(usuario.password === password) {
     return true;
   }
   else {
@@ -100,7 +100,7 @@ function actualizarPassword (usuario, nuevaPassword) {
   // Reemplaza la contraseña existente en el objeto "usuario" con el valor de "nuevaPassword"
   // Devuelve el objeto
   // Tu código:
-  usuario["password"] = nuevaPassword
+  usuario.password = nuevaPassword
   return usuario
 }
 
@@ -109,7 +109,7 @@ function agregarAmigo (usuario, nuevoAmigo) {
   // Agrega "nuevoAmigo" al final de ese array
   // Devuelve el objeto "usuario"
   // Tu código:
-  usuario["amigos"].push(nuevoAmigo)
+  usuario.amigos.push(nuevoAmigo)
   return usuario
 }
 
@@ -134,9 +134,10 @@ function sumarLikesDeUsuario (usuario) {
   // Devuelve la suma
   // Tu código:
 
+  var posts = usuario.posts
   var suma = 0
-  for(var i = 0; i < usuario.posts.length; i++){
-    suma = suma + usuario.posts[i].likes
+  for(var i = 0; i < posts.length; i++){
+    suma = suma + posts[i].likes
   }
   return suma
 }
